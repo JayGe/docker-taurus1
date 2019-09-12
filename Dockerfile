@@ -18,11 +18,11 @@ RUN wget https://files.pythonhosted.org/packages/e5/c6/3e3aeef38bb0c27364af3d214
 
 RUN git clone https://github.com/daniestevez/gr-csp.git; cd gr-csp/cmake; cmake -DCMAKE_INSTALL_PREFIX=/usr ../; make; make install
 
-RUN /bin/bash gr-lilacsat/examples/LilacSat-1/proxy_publish/setup.sh
+RUN /bin/bash gr-lilacsat/examples/Taurus-1/proxy_publish/setup.sh
 
 RUN sed -i "s/xterm_executable =.*/xterm_executable = \/usr\/bin\/xterm/" /etc/gnuradio/conf.d/grc.conf
 
 #RUN apt-get install -y firefox pulseaudio-utils
 #RUN apt-get install -y pavucontrol alsa-base alsa-utils 
 
-CMD gr-lilacsat/examples/LilacSat-1/proxy_publish/lilacsat_proxy.py
+CMD gr-lilacsat/examples/Taurus-1/proxy_publish/lilacsat_proxy.py
