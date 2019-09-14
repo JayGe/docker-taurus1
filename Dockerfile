@@ -17,8 +17,7 @@ RUN git clone https://github.com/JayGe/gr-lilacsat.git; cd gr-lilacsat/cmake; cm
 RUN wget https://files.pythonhosted.org/packages/e5/c6/3e3aeef38bb0c27364af3d21493d9690c7c3925f298559bca3c48b7c9419/construct-2.8.22.tar.gz; tar -zxvf construct-2.8.22.tar.gz; cd construct-2.8.22; python setup.py install
 
 RUN git clone https://github.com/daniestevez/gr-csp.git; cd gr-csp/cmake; cmake -DCMAKE_INSTALL_PREFIX=/usr ../; make; make install
-
-RUN /bin/bash gr-lilacsat/examples/Taurus-1/proxy_publish/setup.sh
+RUN (cd gr-lilacsat/examples/Taurus-1/proxy_publish;/bin/bash ./setup.sh)
 
 RUN sed -i "s/xterm_executable =.*/xterm_executable = \/usr\/bin\/xterm/" /etc/gnuradio/conf.d/grc.conf
 
