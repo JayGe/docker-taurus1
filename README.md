@@ -27,4 +27,4 @@ At this point everything should work as normal, run frontend_taurus1_rx_rtl whic
 
 This also kind of works in Windows, you will need to install an X server and the windows pulse audio tools and run the pulseaudio server. The RTL input will need to come over the network from the host or another server, this will need configured in the flow. You will also need to configure the pulse audio output to network in the image too.
 
-docker run --rm -it -e DISPLAY --net=host --pid=host --ipc=host gi7ugv/docker-taurus1
+docker run --rm -it -e DISPLAY --net=host gi7ugv/docker-taurus1
